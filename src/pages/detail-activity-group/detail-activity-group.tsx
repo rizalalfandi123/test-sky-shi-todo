@@ -1,5 +1,7 @@
 import Stack from "@mui/material/Stack";
 import { CheckboxProps } from "@mui/material/Checkbox";
+import CircularProgress from "@mui/material/CircularProgress";
+
 import {
   apiEndpoints,
   apiKey,
@@ -81,9 +83,9 @@ export const DetailActivityGroup = () => {
       <DetailActivityGroupTitle listState={[listState, dispatchListState]} />
 
       {loadingList ? (
-        <div>Loading</div>
+        <CircularProgress/>
       ) : listState.list.length <= 0 ? (
-        <img src="/empty-activity-list.svg" alt="empty-activity-list" width={541} height={413} />
+        <img data-cy="todo-empty-state" src="/empty-activity-list.svg" alt="empty-activity-list" width={541} height={413} />
       ) : (
         <Stack spacing="10px" width="100%">
           {listState.list.map((activity, index) => {

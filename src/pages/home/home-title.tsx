@@ -20,7 +20,9 @@ export const HomeTitle = () => {
   };
   return (
     <Stack direction="row" justifyContent="space-between" width="100%" margin="43px 0 55px">
-      <PageTitle>Activity</PageTitle>
+      <PageTitle variant="h1" data-cy="activity-title">
+        Activity
+      </PageTitle>
 
       <AddButton
         variant="contained"
@@ -28,6 +30,7 @@ export const HomeTitle = () => {
         onClick={handleAddActivityGroup}
         loading={loadingCreate}
         size="large"
+        data-cy="activity-add-button"
       >
         Tambah
       </AddButton>

@@ -22,15 +22,15 @@ export const ActivityGroupCard: TActivityGroupCard = (props) => {
   const { title, createdAt, onClickDelete, onClick } = props;
 
   return (
-    <ActivityGroupCardContainer>
-      <ActivityGroupCardTitle role="button" onClick={onClick}>
+    <ActivityGroupCardContainer data-cy="activity-item">
+      <ActivityGroupCardTitle data-cy="activity-item-title" variant="h4" onClick={onClick}>
         {title}
       </ActivityGroupCardTitle>
 
       <ActivityGroupCardFooter>
-        <ActivityGroupCardDate>{createdAt}</ActivityGroupCardDate>
+        <ActivityGroupCardDate data-cy="activity-item-date">{createdAt}</ActivityGroupCardDate>
 
-        <ActivityGroupCardButtonDelete onClick={onClickDelete}>
+        <ActivityGroupCardButtonDelete data-cy="activity-item-delete-button" onClick={onClickDelete}>
           <DeleteIcon />
         </ActivityGroupCardButtonDelete>
       </ActivityGroupCardFooter>

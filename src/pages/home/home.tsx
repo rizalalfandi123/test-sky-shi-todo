@@ -12,6 +12,7 @@ import {
   IListActivityGroupResponse,
 } from "@/utils";
 import ActivityGroupCard from "@/components/activity-group-card";
+import CircularProgress from "@mui/material/CircularProgress";
 import { useNavigate } from "react-router-dom";
 import { HomeTitle } from "./home-title";
 
@@ -50,9 +51,9 @@ export const Home = () => {
       <HomeTitle />
 
       {loadingFetch ? (
-        <div>Loading</div>
+        <CircularProgress/>
       ) : activitiesGroup.data.length <= 0 ? (
-        <img src="/empty-activity.svg" alt="empty-activity" width={541} height={413} />
+        <img data-cy="activity-empty-state" src="/empty-activity.svg" alt="empty-activity" width={541} height={413} />
       ) : (
         <Grid container direction="row" spacing={2}>
           {activitiesGroup.data.map((activity) => {

@@ -23,7 +23,7 @@ export const ActivityCard = (props: IActivityCardProps) => {
   const dotColor = priorityOptions.find((priority) => priority.value === activity.priority)?.color;
 
   return (
-    <ActivityCardContainer>
+    <ActivityCardContainer data-cy="todo-item">
       <Stack direction="row" alignItems="center" spacing="8px">
         <Checkbox checked={activity.is_active === 1 ? true : false} onChange={onChangeCheckbox} />
 
@@ -31,12 +31,12 @@ export const ActivityCard = (props: IActivityCardProps) => {
 
         <ActivityCardTitle isActive={activity.is_active === 1}>{activity.title}</ActivityCardTitle>
 
-        <IconButton onClick={onClickEdit}>
+        <IconButton data-cy="todo-item-edit-button" onClick={onClickEdit}>
           <EditIcon />
         </IconButton>
       </Stack>
 
-      <IconButton onClick={onClickDelete}>
+      <IconButton data-cy="todo-item-delete-button" onClick={onClickDelete}>
         <DeleteIcon />
       </IconButton>
     </ActivityCardContainer>

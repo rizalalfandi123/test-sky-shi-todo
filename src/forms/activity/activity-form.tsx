@@ -29,7 +29,7 @@ export const ActivityForm: TActivityForm = ({ formState }) => {
   return (
     <Stack spacing="58px">
       <FormControl variant="outlined">
-        <Label shrink htmlFor="title">
+        <Label shrink htmlFor="title" data-cy="modal-add-name-title">
           NAMA LIST ITEM
         </Label>
 
@@ -38,12 +38,13 @@ export const ActivityForm: TActivityForm = ({ formState }) => {
           name="title"
           id="title"
           value={form.title}
+          data-cy="modal-add-name-input"
           onChange={(e) => setForm((prev) => ({ ...prev, title: e.target.value }))}
         />
       </FormControl>
 
       <FormControl variant="outlined" sx={{ width: "240px" }}>
-        <Label shrink htmlFor="priority">
+        <Label data-cy="modal-add-priority-title" shrink htmlFor="priority">
           PRIORITY
         </Label>
 

@@ -35,9 +35,9 @@ export const CreateActivity = () => {
 
   return (
     <Dialog open onClose={onClose} fullWidth>
-      <Title>
+      <Title data-cy="modal-add-title">
         Tambah List Item
-        <CloseButton>
+        <CloseButton data-cy="modal-add-close-button" onClick={onClose}>
           <CloseIcon />
         </CloseButton>
       </Title>
@@ -46,7 +46,7 @@ export const CreateActivity = () => {
       </Content>
 
       <DialogActions>
-        <SubmitButton variant="contained" onClick={handleCreateActivity}>
+        <SubmitButton data-cy="modal-add-save-button" variant="contained" onClick={handleCreateActivity}>
           Submit
         </SubmitButton>
       </DialogActions>

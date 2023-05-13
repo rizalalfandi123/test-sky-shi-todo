@@ -68,7 +68,7 @@ export const DetailActivityGroupTitle = ({ listState }: DetailActivityGroupTitle
     <>
       <Stack direction="row" justifyContent="space-between" width="100%" margin="43px 0 55px" gap="18px">
         <Stack direction="row" gap="18px">
-          <BackButton onClick={() => navigate(-1)}>
+          <BackButton onClick={() => navigate(-1)} data-cy="todo-back-button">
             <ChevronLeftIcon />
           </BackButton>
 
@@ -82,20 +82,20 @@ export const DetailActivityGroupTitle = ({ listState }: DetailActivityGroupTitle
               }}
             />
           ) : (
-            <PageTitle onClick={toggleClickEditTitle}>{valueTitle}</PageTitle>
+            <PageTitle data-cy="todo-title" onClick={toggleClickEditTitle}>{valueTitle}</PageTitle>
           )}
 
-          <EditButton onClick={isEditTitle ? handleEditActivityGroup : toggleClickEditTitle}>
+          <EditButton data-cy="todo-title-edit-button" onClick={isEditTitle ? handleEditActivityGroup : toggleClickEditTitle}>
             <EditIcon />
           </EditButton>
         </Stack>
 
         <Stack direction="row" gap="18px">
-          <SwapButton onClick={handleClickSort}>
+          <SwapButton data-cy="todo-sort-button" onClick={handleClickSort}>
             <SwapIcon />
           </SwapButton>
 
-          <AddButton variant="contained" startIcon={<AddIcon />} onClick={handleClickCreateActivity}>
+          <AddButton data-cy="todo-add-button" variant="contained" startIcon={<AddIcon />} onClick={handleClickCreateActivity}>
             Tambah
           </AddButton>
         </Stack>
