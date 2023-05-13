@@ -60,13 +60,7 @@ export const ActivityForm: TActivityForm = ({ formState }) => {
           }}
           onChange={(e) => setForm((prev) => ({ ...prev, priority: e.target.value as TActivityPriority }))}
           displayEmpty
-          IconComponent={(props) => {
-            return (
-              <IconButton sx={{ padding: 0 }} {...props} data-cy="modal-add-priority-dropdown">
-                <ExpandMoreIcon />
-              </IconButton>
-            );
-          }}
+          data-cy="modal-add-priority-dropdown"
         >
           {priorityOptions.map((option, index) => {
             return (
