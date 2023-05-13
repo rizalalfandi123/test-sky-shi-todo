@@ -10,6 +10,7 @@ import {
   useDeleteAlert,
   useDetailActivityGroupQuery,
   useEditActivity,
+  useNotification,
   usePageTitle,
 } from "@/utils";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
@@ -34,6 +35,9 @@ export const DetailActivityGroup = () => {
 
   // TODO: Open alert delete
   const handleOpenAlertDelete = useDeleteAlert((state) => state.handleOpenAlertDelete);
+
+  // TODO: Handle open notification after delete
+  const handleOpenNotification = useNotification((state) => state.handleOpenNotification);
 
   useEffect(() => {
     if (!loadingList) {
@@ -77,6 +81,8 @@ export const DetailActivityGroup = () => {
       deleteUrl: `${apiEndpoints.todoItem}/${activity.id}`,
       actionAfterDelete: () => {
         queryClient.invalidateQueries([apiKey.activityGroups, { id }]);
+
+        handleOpenNotification({ message: "Todo berhasil dihapus" });
       },
     });
   };
@@ -86,7 +92,7 @@ export const DetailActivityGroup = () => {
       <DetailActivityGroupTitle listState={[listState, dispatchListState]} />
 
       {loadingList ? (
-        <CircularProgress/>
+        <CircularProgress />
       ) : listState.list.length <= 0 ? (
         <img data-cy="todo-empty-state" src="/empty-activity-list.svg" alt="empty-activity-list" width={541} height={413} />
       ) : (
