@@ -52,7 +52,6 @@ export const ActivityForm: TActivityForm = ({ formState }) => {
           value={form.priority}
           name="priority"
           id="priority"
-          data-cy="modal-add-priority-item"
           sx={{
             [`& .MuiSelect-select.MuiSelect-outlined.MuiInputBase-input.MuiOutlinedInput-input`]: {
               display: "flex",
@@ -71,7 +70,7 @@ export const ActivityForm: TActivityForm = ({ formState }) => {
         >
           {priorityOptions.map((option, index) => {
             return (
-              <MenuItem data-cy={option.testData} value={option.value} key={index}>
+              <MenuItem data-cy="modal-add-priority-item" value={option.value} key={index}>
                 <ListItemIcon>
                   <DotIcon sx={{ color: option.color, marginRight: "19px" }} />
                 </ListItemIcon>
