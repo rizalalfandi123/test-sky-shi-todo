@@ -78,6 +78,7 @@ export const DetailActivityGroupTitle = ({ listState }: DetailActivityGroupTitle
               variant="standard"
               autoFocus
               onChange={(e) => setValueTitle(e.target.value)}
+              onBlur={handleEditActivityGroup}
               InputProps={{
                 sx: inputStyle,
               }}
