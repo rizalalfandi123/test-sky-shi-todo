@@ -1,5 +1,4 @@
 import Stack from "@mui/material/Stack";
-import IconButton from "@mui/material/IconButton";
 import FormControl from "@mui/material/FormControl";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import DotIcon from "@mui/icons-material/FiberManualRecord";
@@ -7,7 +6,6 @@ import MenuItem from "@mui/material/MenuItem";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import Select from "@mui/material/Select";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { SetStateAction, FunctionComponent, Dispatch } from "react";
 import { Label } from "./activity-form.styled";
 import { TActivityPriority, priorityOptions } from "@/utils";
