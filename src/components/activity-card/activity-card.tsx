@@ -25,11 +25,11 @@ export const ActivityCard = (props: IActivityCardProps) => {
   return (
     <ActivityCardContainer data-cy="todo-item">
       <Stack direction="row" alignItems="center" spacing="8px">
-        <Checkbox checked={activity.is_active === 1 ? true : false} onChange={onChangeCheckbox} />
+        <Checkbox data-cy="todo-item-checkbox" checked={activity.is_active === 1 ? true : false} onChange={onChangeCheckbox} />
 
-        <DotIcon sx={{ color: dotColor }} />
+        <DotIcon data-cy="todo-item-priority-indicator" sx={{ color: dotColor }} />
 
-        <ActivityCardTitle isActive={activity.is_active === 1}>{activity.title}</ActivityCardTitle>
+        <ActivityCardTitle data-cy="todo-item-title" isActive={activity.is_active === 1}>{activity.title}</ActivityCardTitle>
 
         <IconButton data-cy="todo-item-edit-button" onClick={onClickEdit}>
           <EditIcon />

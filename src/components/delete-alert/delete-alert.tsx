@@ -23,20 +23,20 @@ export const DeleteAlert = () => {
   };
 
   return (
-    <Dialog open={Boolean(data)} onClose={onClose}>
+    <Dialog data-cy="modal-delete" open={Boolean(data)} onClose={onClose}>
       <DeleteAlertContainer alignItems="center" justifyContent="space-between">
-        <img src="/delete-alert.svg" alt="delete-alert-icon" width={84} height={84} />
+        <img data-cy="modal-delete-icon" src="/delete-alert.svg" alt="delete-alert-icon" width={84} height={84} />
 
         <DeleteAlertMessage as="div">
           {data?.message} "{<b>{data?.dataName}</b>}" ?
         </DeleteAlertMessage>
 
         <Stack gap="20px" direction="row">
-          <DeleteAlertButton size="large" variant="contained" sx={buttonCancelStyle} onClick={onClose}>
+          <DeleteAlertButton data-cy="modal-delete-cancel-button" size="large" variant="contained" sx={buttonCancelStyle} onClick={onClose}>
             Batal
           </DeleteAlertButton>
 
-          <DeleteAlertButton size="large" variant="contained" color="error" loading={isLoading} onClick={handleClickDelete}>
+          <DeleteAlertButton data-cy="modal-delete-confirm-button" size="large" variant="contained" color="error" loading={isLoading} onClick={handleClickDelete}>
             Hapus
           </DeleteAlertButton>
         </Stack>

@@ -11,11 +11,11 @@ export const Notification = () => {
   const onClose = useNotification((state) => state.handleCloseNotification);
 
   return (
-    <Dialog open={Boolean(data)} onClose={onClose} fullWidth>
+    <Dialog data-cy="modal-information" open={Boolean(data)} onClose={onClose} fullWidth>
       <NotificationConatiner>
-        <ErrorIcon color="success" />
+        <ErrorIcon data-cy="modal-information-icon" color="success" />
 
-        <Typography>{data?.message}</Typography>
+        <Typography data-cy="modal-information-title">{data?.message}</Typography>
       </NotificationConatiner>
     </Dialog>
   );
