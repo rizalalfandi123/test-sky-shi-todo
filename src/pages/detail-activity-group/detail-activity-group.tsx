@@ -10,6 +10,7 @@ import {
   useDeleteAlert,
   useDetailActivityGroupQuery,
   useEditActivity,
+  usePageTitle,
 } from "@/utils";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
@@ -17,6 +18,8 @@ import ActivityCard, { TActivity } from "@/components/activity-card";
 import { DetailActivityGroupTitle } from "./detail-activity-group-title";
 
 export const DetailActivityGroup = () => {
+  usePageTitle("Detail");
+
   const { id = "" } = useParams();
 
   const { data = { title: "", todo_items: [] }, isLoading: loadingList } = useDetailActivityGroupQuery(id);

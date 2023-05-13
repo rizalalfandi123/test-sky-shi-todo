@@ -10,14 +10,16 @@ import {
   apiEndpoints,
   useNotification,
   IListActivityGroupResponse,
+  usePageTitle,
 } from "@/utils";
 import ActivityGroupCard from "@/components/activity-group-card";
 import CircularProgress from "@mui/material/CircularProgress";
 import { useNavigate } from "react-router-dom";
 import { HomeTitle } from "./home-title";
 
-
 export const Home = () => {
+  usePageTitle("Dashboard");
+
   const navigate = useNavigate();
 
   // TODO: Open alert delete
@@ -51,7 +53,7 @@ export const Home = () => {
       <HomeTitle />
 
       {loadingFetch ? (
-        <CircularProgress/>
+        <CircularProgress />
       ) : activitiesGroup.data.length <= 0 ? (
         <img data-cy="activity-empty-state" src="/empty-activity.svg" alt="empty-activity" width={541} height={413} />
       ) : (
