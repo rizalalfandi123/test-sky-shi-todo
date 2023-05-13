@@ -36,7 +36,7 @@ export const CreateActivity = () => {
   const disabledSubmitButton = !Boolean(form[0].title)
 
   return (
-    <Dialog data-cy="modal-add" open onClose={onClose} fullWidth>
+    <Dialog data-cy="modal-add" open onClose={onClose} fullWidth >
       <Title data-cy="modal-add-title">
         Tambah List Item
         <CloseButton data-cy="modal-add-close-button" onClick={onClose}>

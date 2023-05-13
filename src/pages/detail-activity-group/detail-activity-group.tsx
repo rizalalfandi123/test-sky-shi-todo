@@ -57,7 +57,7 @@ export const DetailActivityGroup = () => {
   const handleChangeCheckbox: (activity: TActivity) => CheckboxProps["onChange"] = (activity) => async (_e, newValue) => {
     const newActivity = {
       ...activity,
-      is_active: newValue ? 1 : 0,
+      is_active: newValue ? 0 : 1,
     };
 
     dispatchListState({
