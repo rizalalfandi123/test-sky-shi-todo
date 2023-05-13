@@ -1,4 +1,5 @@
 import Stack from "@mui/material/Stack";
+import IconButton from "@mui/material/IconButton";
 import FormControl from "@mui/material/FormControl";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import DotIcon from "@mui/icons-material/FiberManualRecord";
@@ -6,10 +7,9 @@ import MenuItem from "@mui/material/MenuItem";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import Select from "@mui/material/Select";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { SetStateAction, FunctionComponent, Dispatch } from "react";
 import { Label } from "./activity-form.styled";
-import { Dispatch } from "react";
-import { SetStateAction } from "react";
-import { FunctionComponent } from "react";
 import { TActivityPriority, priorityOptions } from "@/utils";
 
 export interface IActivityForm {
@@ -61,9 +61,12 @@ export const ActivityForm: TActivityForm = ({ formState }) => {
           }}
           onChange={(e) => setForm((prev) => ({ ...prev, priority: e.target.value as TActivityPriority }))}
           displayEmpty
-          SelectDisplayProps={{
-            // @ts-ignore
-            "data-cy": "modal-add-priority-dropdown",
+          IconComponent={(props) => {
+            return (
+              <IconButton sx={{ padding: 0 }} {...props} data-cy="modal-add-priority-dropdown">
+                <ExpandMoreIcon />
+              </IconButton>
+            );
           }}
         >
           {priorityOptions.map((option, index) => {
