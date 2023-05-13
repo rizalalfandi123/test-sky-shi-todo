@@ -76,6 +76,7 @@ export const DetailActivityGroupTitle = ({ listState }: DetailActivityGroupTitle
             <TextField
               value={valueTitle}
               variant="standard"
+              autoFocus
               onChange={(e) => setValueTitle(e.target.value)}
               InputProps={{
                 sx: inputStyle,

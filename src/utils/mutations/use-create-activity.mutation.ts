@@ -34,7 +34,7 @@ const email = import.meta.env.VITE_API_EMAIL;
 export const useCreateActivity: TUseCreateActivity = (options = {}) => {
   return useMutation<ICreateActivityResponse, unknown, ICreateActivityBodyRequest>({
     mutationFn: async (bodyRequest) =>
-      (await axios.post<ICreateActivityResponse>(apiEndpoints.todoItem, { ...bodyRequest, email, is_active: false})).data,
+      (await axios.post<ICreateActivityResponse>(apiEndpoints.todoItem, { ...bodyRequest, email, is_active: true})).data,
     ...options,
   });
 };
