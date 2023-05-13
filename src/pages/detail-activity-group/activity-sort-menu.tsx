@@ -63,6 +63,7 @@ export const ActivitySortMenu = (props: IActivitySortMenuProps) => {
           return (
             <>
               <MenuItem
+                data-cy="sort-selection"
                 onClick={(e) => {
                   handleClickSortItem(label);
                   if (menuProps.onClose) {
