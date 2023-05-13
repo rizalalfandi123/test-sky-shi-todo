@@ -43,7 +43,7 @@ export const EditActivity = () => {
     <Dialog open onClose={onClose} fullWidth>
       <Title>
         Edit Item
-        <CloseButton>
+        <CloseButton onClick={onClose}>
           <CloseIcon />
         </CloseButton>
       </Title>
