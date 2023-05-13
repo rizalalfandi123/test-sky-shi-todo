@@ -23,7 +23,7 @@ export const DeleteAlert = () => {
   };
 
   return (
-    <Dialog data-cy="modal-delete" open={Boolean(data)} onClose={onClose}>
+    <Dialog data-cy="todo-modal-delete" open={Boolean(data)} onClose={onClose}>
       <DeleteAlertContainer alignItems="center" justifyContent="space-between">
         <img data-cy="modal-delete-icon" src="/delete-alert.svg" alt="delete-alert-icon" width={84} height={84} />
 

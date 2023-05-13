@@ -6,6 +6,7 @@ import MenuItem from "@mui/material/MenuItem";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import Select from "@mui/material/Select";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Label } from "./activity-form.styled";
 import { Dispatch } from "react";
 import { SetStateAction } from "react";
@@ -52,20 +53,18 @@ export const ActivityForm: TActivityForm = ({ formState }) => {
           value={form.priority}
           name="priority"
           id="priority"
-          data-cy="modal-add-priority-dropdown"
+          data-cy="modal-add-priority-item"
           sx={{
             [`& .MuiSelect-select.MuiSelect-outlined.MuiInputBase-input.MuiOutlinedInput-input`]: {
               display: "flex",
               alignItems: "center",
             },
           }}
-          slotProps={{
-            input: {
-
-            }
-          }}
           onChange={(e) => setForm((prev) => ({ ...prev, priority: e.target.value as TActivityPriority }))}
           displayEmpty
+          IconComponent={(props) => {
+            return <ExpandMoreIcon {...props} data-cy="modal-add-priority-dropdown" />;
+          }}
         >
           {priorityOptions.map((option, index) => {
             return (

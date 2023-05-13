@@ -6,7 +6,7 @@ import ListItemText from "@mui/material/ListItemText";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import CheckIcon from "@mui/icons-material/Check";
 import { AscDateIcon, DescDateIcon, AscIcon, DescIcon, SwapIcon } from "@/components/custom-icons";
-import { Dispatch, ReactNode } from "react";
+import { Dispatch, Fragment, ReactNode } from "react";
 import { IActivityListState, TActivitySort, TUseActivityListAction } from "@/utils";
 
 interface IMenuItem extends MenuItemProps {
@@ -61,9 +61,10 @@ export const ActivitySortMenu = (props: IActivitySortMenuProps) => {
       <MenuList>
         {menus.map(({ icon, label, onClick, ...menuItemProps }, index) => {
           return (
-            <>
+            <Fragment key={index}>
               <MenuItem
                 data-cy="sort-selection"
+
                 onClick={(e) => {
                   handleClickSortItem(label);
                   if (menuProps.onClose) {
@@ -83,7 +84,7 @@ export const ActivitySortMenu = (props: IActivitySortMenuProps) => {
               </MenuItem>
 
               {index !== menus.length - 1 && <Divider />}
-            </>
+            </Fragment>
           );
         })}
       </MenuList>
