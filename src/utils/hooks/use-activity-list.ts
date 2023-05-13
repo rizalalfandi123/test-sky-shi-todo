@@ -69,9 +69,9 @@ export const useActivityList = (initialState: IActivityListState) => {
         return {
           ...state,
           list: state.list.sort((a, b) => {
-            if (a.is_active && !b.is_active) {
+            if (b.is_active && !a.is_active) {
               return -1;
-            } else if (!a.is_active && b.is_active) {
+            } else if (!b.is_active && a.is_active) {
               return 1;
             } else {
               return 0;
